@@ -1,0 +1,56 @@
+{% extends 'adminheader.html' %}
+
+{% block content %}
+
+<style type="text/css">
+    table,tr,th,td
+    {
+        font-name:arial;
+        border:1px solid black;
+        border-collapse:collapse;
+    }
+
+</style>
+
+
+<div style="position:absolute; left:200px; top:100px;">
+    <br><br>
+    <h1>This is Admin View Voters Page</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Voter Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Date Of Birth</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for data in rows %}
+        <tr>
+            {% for row in data.split(",") %}
+            <td>{{row}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="login-form" style="position:absolute; left:800px; top:300px;">
+    <form action="opennotepad" method="post">
+        <div class="action">
+            <button type="submit" name="choice" value="Voters">Open Voter</button>
+        </div>
+        <div class="action">
+            <button type="submit" name="choice" value="Id">Open ID File</button>
+        </div>
+        <div class="action">
+            <button type="submit" name="choice" value="Traversal">Open Traversal</button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'adminheader.html' %}
+
+{% block content %}
+
+<style type="text/css">
+    table,tr,th,td
+    {
+        font-name:arial;
+        border:1px solid black;
+        border-collapse:collapse;
+    }
+
+</style>
+
+
+<div style="position:absolute; left:200px; top:100px;">
+    <br><br>
+    <h1>This is Admin View Traversal Page</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Traversal Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in rows %}
+        <tr>
+            
+            <td>{{row}}</td>
+            
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
